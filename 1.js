@@ -19,8 +19,7 @@ socket.onerror = (error) => {
     console.error('Помилка WebSocket:', error);
 };
 
-let rValues = [];
-let thetaValues = [];
+let points = [];
 let lifeSpan = 4600;
 
 function updateChart(data) {
@@ -36,20 +35,23 @@ function updateChart(data) {
             } else {
                 color = 'green';
             }
-            rValues.push({ value: distance, timestamp: Date.now(), color });
-            thetaValues.push({ value: data.scanAngle, timestamp: Date.now() });
+            points.push({
+                r: distance,
+                theta: data.scanAngle,
+                timestamp: Date.now(),
+                color: color
+            });
         });
     }
     const now = Date.now();
-    rValues = rValues.filter(point => now - point.timestamp < lifeSpan);
-    thetaValues = thetaValues.filter(point => now - point.timestamp < lifeSpan);
+    points = points.filter(point => now - point.timestamp < lifeSpan);
 
         Plotly.react('chart', [{
         type: 'scatterpolar',
-        r: rValues.map(point => point.value),
-        theta: thetaValues.map(point => point.value),
+        r: points.map(point => point.r),
+        theta: points.map(point => point.theta),
         mode: 'markers',
-        marker: { size: 15, color: rValues.map(point => point.color)},
+        marker: { size: 15, color: points.map(point => point.color)},
     }], {
         polar: {
             radialaxis: { visible: true, title: '(km)', range: [0, 200] },
