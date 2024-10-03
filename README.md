@@ -13,6 +13,8 @@ wscat -c ws://localhost:4000
 
 Кожна ціль представлена як точка на графіку з координатами (кут, відстань).
 ![Точка](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/5.png)  
+![Код](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/1.png)  
+![Код](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/2.png)
 
 Можливість зміни параметрів вимірювальної частини радара за допомогою API запитів.
 ![Изменения](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/6.png)  
