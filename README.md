@@ -9,11 +9,11 @@ docker run --name radar-emulator -p 4000:4000 iperekrestov/university:radar-emul
 wscat -c ws://localhost:4000  
 
 Веб-додаток підключається до WebSocket сервера, зчитує дані про задетектовані цілі та відображає отримані дані на графіку в полярних координатах. Обробляє дані отримані через вебсокет і відображає їх на графіку.
-![Радар]()  
+![Радар](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/4.png)  
 
 Кожна мета представлена як точка на графіку з координатами (кут, відстань).
-![Точка]()  
+![Точка](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/5.png)  
 
 Можливість зміни параметрів вимірювальної частини радара за допомогою API запитів.
-![Изменения]()  
-![Код]()
+![Изменения](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/6.png)  
+![Код](https://github.com/MKroppp/LB-RADAR/blob/main/Screenshots/3.png)
